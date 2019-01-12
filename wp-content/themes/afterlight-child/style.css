@@ -1,0 +1,228 @@
+/*
+Theme Name: Afterlight Child
+Theme URI: https://wordpress.com/themes/afterlight/
+Description: Afterlight is a monochromatic blog theme with an option for a full-screen background image. Add your favorite background image or color to lend your personal flair.
+Version: 1.0.3
+Author: Automattic
+Author URI: https://wordpress.com/themes/
+Template: Afterlight
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: afterlight
+Tags: accessibility-ready, blog, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, one-column, rtl-language-support, sticky-post, translation-ready
+*/
+
+/* Global Styles */
+
+a:hover, a:focus {
+	color: #facade;
+}
+
+body {
+	font-family: 'Poppins', 'Lato', sans-serif;
+	color: #1a1a1a;
+	height: 100vh;
+}
+
+.entry-content ul {
+	list-style: none;
+}
+
+.entry-content li {
+	text-indent: 2rem;
+	margin-bottom: 5px;
+}
+
+.entry-content a {
+	background-image: none;
+}
+
+.wp-block-audio {
+	margin-bottom: 1rem;
+}
+
+/* Header Styles */
+
+.nav-menu {
+	font-family: 'Comfortaa', 'Lato', sans-serif, monospace;
+	color: #1a1a1a;
+}
+
+.site-header {
+	border-bottom: none;
+}
+
+.primary-menu .site-branding {
+	margin-top: 0;
+}
+
+.site-branding-inner {
+	display: none;
+}
+
+.sidebar-toggle {
+	border: none;
+}
+
+.sidebar-toggle:hover, .sidebar-toggle:active {
+	background: none;
+}
+
+.site-header-top a, .site-header-top button {
+	color: #1a1a1a;
+}
+
+.site-header .nav-menu a:hover, .sidebar-toggle:hover {
+	color: #facade;
+}
+
+/* Social Links */
+
+.social-navigation a:before {
+	font-family: "Font Awesome 5 Brands", "Font Awesome 5 Free";
+	font-weight: 400;
+	color: #1a1a1a;
+}
+
+.social-navigation a:hover:before {
+	color: #facade;
+}
+
+.social-navigation a[href*="twitter"]:before {
+	content: "\f099";
+}
+
+.social-navigation a[href*="instagram"]:before {
+	content: "\f16d";
+}
+
+.social-navigation a[href*="soundcloud"]:before {
+	content: "\f1be";
+}
+
+.social-navigation a[href*="bandcamp"]:before {
+	content: "\f2d5";
+}
+
+.social-navigation a[href*="mailto"]:before {
+	content: "\f0e0";
+}
+
+/* Front Page Styles */
+
+.home .content-area {
+}
+
+.home article {
+	background: url('images/web_press_2.jpg') no-repeat fixed top center / cover !important;
+	min-height: 70vh;
+}
+
+.post-116 .entry-header {
+	display: none;
+}
+
+.home .hentry {
+	margin-right: 0;
+}
+
+.home .site-footer {
+	display: none;
+}
+
+/* CV Styles */
+
+.cv-page {
+	max-width: 833px;
+}
+
+.cv-main {
+	margin: 0 7.6923%;
+    padding: 7.6923% 0;
+    position: relative;
+}
+
+.cv h1 {
+	margin-bottom: 4rem;
+}
+
+.cv-section .hentry {
+	margin: 0;
+	padding: 0;	
+}
+
+.cv-section {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-content: space-between;
+}
+
+.cv-section .hentry:before, .cv-section .hentry:first-child:before {
+	display: none;
+}
+
+.education .cv-section ul {
+	max-width: 600px;
+}
+
+.cv-section ul {
+	width: 333px;
+}
+
+.cv-item-wrapper {
+	list-style: none;
+}
+
+/* Footer Styles */
+
+.ctf-tweets {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+#ctf .ctf-item {
+	border-top: none;
+}
+
+.ctf-item {
+	max-width: 200px;
+}
+
+#ctf .cft-tweet-content p:hover {
+	color: #facade;
+}
+
+.ctf-retweet {
+	display: none;
+}
+
+/* Media Fixes */
+
+@media screen and (max-width: 835px) {
+
+	.ctf-item:nth-child(4) {
+		display: none;
+	}
+
+	.ctf-item:nth-child(5) {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	.ctf-item:nth-child(3) {
+		display: none;
+	}	
+
+	.ctf-item:nth-child(4) {
+		display: none;
+	}
+
+	.ctf-item:nth-child(5) {
+		display: none;
+	}
+}
