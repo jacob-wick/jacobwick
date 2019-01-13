@@ -37,11 +37,6 @@ $when = get_field('when');
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php
-			if ( '' != get_the_author_meta( 'description' ) ) :
-				get_template_part( 'author-bio' );
-			endif;
-		?>
 		<?php afterlight_entry_meta(); ?>
 		<?php edit_post_link( __( 'Edit', 'afterlight' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
