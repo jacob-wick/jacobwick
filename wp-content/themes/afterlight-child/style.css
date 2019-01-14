@@ -118,7 +118,7 @@ body {
 	min-height: 70vh;
 }
 
-.post-116 .entry-header {
+.post-116 .entry-header, .post-116 .post-thumbnail {
 	display: none;
 }
 
