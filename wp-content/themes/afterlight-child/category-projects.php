@@ -23,7 +23,7 @@ get_header(); ?>
 
 			<?php if ( is_home() && ! is_front_page() ) : ?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?>banana</h1>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?>Projects 2008-2017</h1>
 				</header>
 			<?php endif; ?>
 
