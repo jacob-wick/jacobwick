@@ -2,10 +2,10 @@
 Author: Smash Balloon
 Contributors: smashballoon, craig-at-smash-balloon
 Support Website: http://smashballoon/custom-twitter-feeds/
-Tags: Twitter, Twitter feed, Tweets, Twitter widget, Custom Twitter Feed
-Requires at least: 3.0
-Tested up to: 5.0
-Stable tag: 1.2.10
+Tags: Twitter, Twitter feed, Twitter Tweets, Twitter widget, Custom Twitter Feed
+Requires at least: 3.4
+Tested up to: 5.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ Display **completely customizable**, **responsive** and **search engine crawlabl
 * Display a beautiful header at the top of your Twitter feed
 * Enter your own custom CSS or JavaScript for even deeper customization
 
-For simple step-by-step directions on how to set up the Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/free/ 'Custom Twitter Feeds setup guide').
+For simple step-by-step directions on how to set up the Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/free/?utm_source=wordpress&utm_campaign=ctf 'Custom Twitter Feeds setup guide').
 
 = Benefits =
 * **Increase social engagement** between you and your users, customers, or fans
@@ -43,9 +43,9 @@ For simple step-by-step directions on how to set up the Custom Twitter Feeds plu
 [View the reviews](https://wordpress.org/support/plugin/custom-twitter-feeds/reviews/) to see what other users are saying about the Custom Twitter Feeds plugin.
 
 = Feedback or Support =
-We're dedicated to providing the most robust and well supported Twitter feed plugin in the world, so if you have an issue or any feedback on how to improve the plugin then please [let us know](https://smashballoon.com/custom-twitter-feeds/support/ 'Twitter Feed Support').
+We're dedicated to providing the most robust and well supported Twitter feed plugin in the world, so if you have an issue or any feedback on how to improve the plugin then please [let us know](https://smashballoon.com/custom-twitter-feeds/support/?utm_source=wordpress&utm_campaign=ctf 'Twitter Feed Support').
 
-If you like the plugin then please consider leaving a review, as it really helps to support the plugin. If you have an issue then please allow us to help you fix it before leaving a review. Just [let us know](https://smashballoon.com/custom-twitter-feeds/support/ 'Twitter Feed Support') what the problem is and we'll get back to you right away.
+If you like the plugin then please consider leaving a review, as it really helps to support the plugin. If you have an issue then please allow us to help you fix it before leaving a review. Just [let us know](https://smashballoon.com/custom-twitter-feeds/support/?utm_source=wordpress&utm_campaign=ctf 'Twitter Feed Support') what the problem is and we'll get back to you right away.
 
 = Featured Reviews =
 "***Great for Customization** - Great plugin! Superb customization options! Am changing all twitter feeds for all my websites to this! I have tried several plugins so far. This is the best I have come across :)*" - [@nehavivekpatil](https://wordpress.org/support/topic/great-for-customization-2/)
@@ -65,11 +65,11 @@ If you like the plugin then please consider leaving a review, as it really helps
 *Kudos to the SmashBalloon team on a well supported, tightly developed, feature-packed WordPress Plugin.* - [@laymanlab](https://wordpress.org/support/topic/everything-youll-need-in-a-twitter-feed-plugin/)
 
 = Pro Version =
-We recently released a [Pro version](http://smashballoon.com/custom-twitter-feeds/ 'Custom Twitter Feeds Pro') which includes some awesome additional features:
+We recently released a [Pro version](http://smashballoon.com/custom-twitter-feeds/?utm_source=wordpress&utm_campaign=ctf 'Custom Twitter Feeds Pro') which includes some awesome additional features:
 
 * Display Tweets from **multiple users or hashtags in the same feed**
 * Display **photos**, **videos**, and **gifs** and view them in a **popup lightbox** directly on your site
-* Multi-column **Masonry layout** [demo](http://smashballoon.com/custom-twitter-feeds/demo/masonry 'Custom Twitter Feeds Pro Masonry Demo')
+* Multi-column **Masonry layout** [demo](http://smashballoon.com/custom-twitter-feeds/demo/masonry?utm_source=wordpress&utm_campaign=ctf 'Custom Twitter Feeds Pro Masonry Demo')
 * Allow **filtering** of user timelines include/exclude any/all keywords/hashtags
 * Customizable **Carousels** and **Slideshows**
 * Fully functional **search endpoint**
@@ -80,7 +80,7 @@ We recently released a [Pro version](http://smashballoon.com/custom-twitter-feed
 * **Combine multiple feeds** into one
 * **Autoload more Tweets** when scrolling
 
-Try the Pro version [demo here](http://smashballoon.com/custom-twitter-feeds/demo 'Custom Twitter Feeds Pro Demo')
+Try the Pro version [demo here](http://smashballoon.com/custom-twitter-feeds/demo?utm_source=wordpress&utm_campaign=ctf 'Custom Twitter Feeds Pro Demo')
 
 == Installation ==
 1. Install the Custom Twitter Feeds plugin either via the WordPress plugin directory, or by uploading the files to your web server (in the /wp-content/plugins/ directory).
@@ -89,7 +89,7 @@ Try the Pro version [demo here](http://smashballoon.com/custom-twitter-feeds/dem
 4. Use the shortcode [custom-twitter-feeds] in your page, post or widget to display your feed.
 5. You can display multiple Twitter feeds with different configurations by specifying the necessary parameters directly in the shortcode: [custom-twitter-feeds hashtag=#smashballoon].
 
-For simple step-by-step directions on how to set up the Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/free/ 'Custom Twitter Feeds setup guide').
+For simple step-by-step directions on how to set up the Custom Twitter Feeds plugin please refer to our [setup guide](http://smashballoon.com/custom-twitter-feeds/free/?utm_source=wordpress&utm_campaign=ctf 'Custom Twitter Feeds setup guide').
 
 = Setting up the Free Custom Twitter Feeds WordPress Plugin =
 
@@ -163,7 +163,7 @@ The main differences between the free version and Pro version of the Custom Twit
 - Autoload more tweets when scrolling to the bottom of the Twitter feed
 - Include Tweet replies ("in reply to")
 
-You can see the demo of the Custom Twitter Feeds Pro version [here](https://smashballoon.com/custom-twitter-feeds/demo/), and a video screencast [here](https://smashballoon.com/custom-twitter-feeds/#watch-video).
+You can see the demo of the Custom Twitter Feeds Pro version [here](https://smashballoon.com/custom-twitter-feeds/demo/?utm_source=wordpress&utm_campaign=ctf), and a video screencast [here](https://smashballoon.com/custom-twitter-feeds/#watch-video?utm_source=wordpress&utm_campaign=ctf).
 
 = I'm receiving an error message when trying to display my Twitter feed =
 
@@ -220,7 +220,7 @@ All four fields, consumer token, consumer secret, access token, and access token
 
 Navigate to the type of Twitter feed you are trying to display on twitter.com. For example, if you are displaying a Twitter feed from the screenname "smashballoon", go to https://twitter.com/smashballoon. Make sure there are tweets visible. Then click on the link "Tweets & replies". If there are a more recent replies than original tweets, there may be too many tweets being filtered out to display any. Twitter replies are removed by default. You can raise the number of tweets to retrieve initially by going to the Custom Twitter Feed Settings page, "Customize" tab, and navigating to the "Advanced" area. Then raise the "Tweet Multiplier" and test to see if your Twitter feed now displays tweets.
 
-If you're still having trouble displaying your Tweets after trying the common issues above then please [contact support](https://smashballoon.com/custom-twitter-feeds/support/) for assistance.
+If you're still having trouble displaying your Tweets after trying the common issues above then please [contact support](https://smashballoon.com/custom-twitter-feeds/support/?utm_source=wordpress&utm_campaign=ctf) for assistance.
 
 = Why do you guys love providing support so much? =
 
@@ -237,95 +237,33 @@ Not many developers love providing support, but we're a rare breed here at Smash
 7. To display a feed just copy and paste the shortcode into a widget or page
 
 == Changelog ==
-= 1.2.10 =
-* Tweak: Updated the Twitter login button URL
-* Fix: Avatar would appear to the right of Tweets or not at all in some versions of Firefox
-* Fix: Minor bug fixes
+= 1.5 =
+* New: Added a "Twitter Feeds" Gutenberg block to use in the block editor, allowing you to easily add a feed to posts and pages.
+* Tweak: Added function ctf_init() to easily rerun JavaScript for the plugin.
 
-= 1.2.9 =
-* Fix: Fixed PHP warning caused by trying to count a boolean in certain circumstances
-* Fix: AJAX load more not working when AJAX themes being used
+= 1.4.1 =
+* Tweak: Added aria-label attributes to SVG icons for improved accessibility.
+* Fix: Fixed PHP warning that occurred when a URL in the tweet text did not have a full length URL available from the Twitter API.
+* Fix: Using the setting to link the tweet text to Twitter would cause nested links and invalid HTML.
+* Fix: Fixed Twitter logo not displaying if avatar, author, and date were hidden.
 
-= 1.2.8 =
-* Fix: "Preserve settings on uninstall" setting not working correctly
-* Fix: Clear cache button would not clear all caches in some situations
+= 1.4 =
+* New: Twitter logo added to the top right of each tweet to fit with Twitter's display guidelines. Customize the logo on the "Style" tab, "Author" area or hide it using the settings on the "Customize" tab "Show/Hide" settings.
+* New: Minified versions of JavaScript and CSS files now used.
+* New: JavaScript file added to the source of the page only when the shortcode is used on the page.
+* New: SVGs used for icons instead of Font Awesome font file. You can switch back to using the Font Awesome font file on the "Customize" tab, "Advanced" area.
+* New: Tweets that are replies to the same account or mention the same account can be included in the feed by enabling the setting "Always include replies to self in the feed".
+* New: Added a setting to completely disable Twitter intents widget.js file.
+* Tweak: The HTML element used for icons has been switched from "i" to "span" for better accessibility.
+* Tweak: Changed styling of media placeholder icons.
+* Tweak: Combined widgets.js file with native JavaScript file for the plugin.
+* Tweak: Twitter widgets.js will only be enqueued when "actions" are included in the feed.
+* Tweak: Tweet text line height style set to 1.4.
+* Fix: Bio text not displaying in header even when enabled.
 
-= 1.2.7 =
-* New: Added screen reader labels for improved accessibility
-* Fix: Bug with "persistent" cache duplicating tweets
+= 1.3 =
+* New: You can now choose to only display a certain amount of text characters in your Tweets, with a clickable link to display the rest. This is set to be 280 characters by default, but can be changed by using the following setting: Customize > Style > Tweet Text > Text Length, or by using the "textlength" shortcode setting.
+* Tweak: Twitter intents JavaScript not loaded on the page if tweet actions are removed
+* Fix: Removed target="_blank" from div element
 
-= 1.2.6 =
-* Fix: Twitter hashtag feeds now work for hashtags beginning with a number e.g. #1august
-* Fix: Added a workaround for a minor formatting issue caused by some themes
-
-= 1.2.5 =
-* New: Added an option to remove the placeholder icon that's used when a Tweet contains media. This can be found under `Customize > Show/Hide > Media placeholder` or using the `exclude` shortcode option, eg: `exclude="placeholder"`.
-* Fix: Individual tweet links in mobile would not properly link to mobile.twitter.com
-* Fix: Error message displayed instead of empty tweets for empty persistent caches
-
-= 1.2.4 =
-* Fix: Custom date format not working in settings area
-* Fix: Twitter avatars would disappear from the feed in Firefox for certain accounts
-* Fix: Changed http: links to https:
-* Fix: Fixed retweets always being included in persistent caches during the initial tweet retrieval
-
-= 1.2.3 =
-* Fix: Fix php warning when no media in tweets under certain circumstances
-* Fix: Missing "alt" attributes for Twitter avatars
-
-= 1.2.2 =
-* Fix: Fixed an issue with include/exclude string to array conversion warning
-
-= 1.2.1 =
-* Fix: Fixed an issue where line breaks in tweet text were being ignored
-* Fix: Fixed an issue where a small line was added to quoted tweets in retweets that have no media
-
-= 1.2 =
-* New: The plugin now uses persistent tweet caching for Twitter hashtag feeds. By default, when displaying hashtag feed Twitter only returns Tweets from the last 7 days, but the persistent cache now allows you to display these Tweets indefinitely.
-* New: Tweets with media will have an icon and label that links to the tweet on twitter.com
-* Fix: Fixed an issue with checkbox settings being changed unintentionally after obtaining a new Twitter access token
-
-= 1.1.8 =
-* Tweak: Updated Custom Twitter Feed plugin links for new WordPress.org repo
-* Fix: Minor bug fixes
-
-= 1.1.7 =
-* Fix: Fixed an issue with the Twitter Access Token and Twitter Secrets not automatically being saved when initially obtaining them
-* Fix: Fixed an issue with some customization settings not saving occasionally
-
-= 1.1.6 =
-* Fix: Fixed an issue when creating a Search feed using the built-in Custom Twitter Feeds widget box
-* Fix: Fixed an issue with the checkbox that allows you to toggle links on/off in the Tweet text
-
-= 1.1.5 =
-* Fix: Fixed a rare issue when loading more Tweets
-* Fix: When there is no bio text in the header then the Twitter screenname text is now automatically centered vertically
-
-= 1.1.4 =
-* Fix: Fixed an issue with some setting checkboxes
-* Fix: Fixed a rare encoding issue which occurred on some server configurations
-* Tested with the upcoming WordPress 4.6 update
-
-= 1.1.3 =
-* Fix: Prevented any duplicate Twitter Tweets from being shown
-* Fix: Fixed a rare issue where a couple of settings weren't being saved successfully
-
-= 1.1.2 =
-* New: Launched a [Pro version](http://smashballoon.com/custom-twitter-feeds/ 'Custom Twitter Feeds Pro') which includes some awesome additional features!
-* Fix: Minor bug fixes
-
-= 1.1.1 =
-* Fix: Added SSL support for Twitter avatar images so https version is used
-* Fix: Fixed an issue with the "hours" custom text string displaying the "minutes" text instead
-
-= 1.1 =
-* New: Added a setting to translate the "Retweeted" text
-* Tweak: If there aren't enough Tweets to populate the feed them Ajax in more automatically
-* Fix: Custom JavaScript is now rerun every time the Load More button is used
-* Fix: CSS display tweaks
-
-= 1.0.1 =
-* Bug fixes
-
-= 1.0 =
-* Launched the Custom Twitter Feeds plugin!
+[See changelog for all versions](https://plugins.svn.wordpress.org/custom-twitter-feeds/trunk/changelog.txt).

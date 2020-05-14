@@ -264,11 +264,13 @@ jQuery(document).ready(function($){
     }); // clear-persistent-cache click
 
     //Pro version notices
-    var ctfUpgradeNote = '<span class="ctf_note"> - <a href="https://smashballoon.com/custom-twitter-feeds/" target="_blank">Available in Pro version</a></span>';
+    var ctfUpgradeNote = '<span class="ctf_note"> - <a href="https://smashballoon.com/custom-twitter-feeds/?utm_source=plugin-free&utm_campaign=ctf" target="_blank">Available in Pro version</a></span>';
     $('.ctf_pro').each(function(){
         var $pro = $(this);
-        $pro.find('td').last().append(ctfUpgradeNote);
-        $pro.find('input, select, textarea').attr('disabled', 'true');
+        if (!$pro.find('.ctf_layout_options_wrap').length) {
+            $pro.find('td').last().append(ctfUpgradeNote);
+            $pro.find('input, select, textarea').attr('disabled', 'true');
+        }
     });
     $('#ctf_include_twittercards, #ctf_include_media, #ctf_include_replied_to').attr('disabled', 'true').removeAttr('checked').next('label').css('color', '#999').after(ctfUpgradeNote);
 
@@ -280,4 +282,38 @@ jQuery(document).ready(function($){
             $(this).closest('span').next('.ctf-pro-options').show();
         }
     });
+
+    function ctfUpdateLayoutTypeOptionsDisplay() {
+        setTimeout(function(){
+            jQuery('.ctf_layout_settings').hide();
+            jQuery('.ctf_layout_settings.ctf_layout_type_'+jQuery('.ctf_layout_type:checked').val()).show();
+        }, 1);
+    }
+    ctfUpdateLayoutTypeOptionsDisplay();
+    jQuery('.ctf_layout_type').change(ctfUpdateLayoutTypeOptionsDisplay);
+
+    // notices
+
+    if (jQuery('#ctf-notice-bar').length) {
+        jQuery('#wpadminbar').after(jQuery('#ctf-notice-bar'));
+        jQuery('#wpcontent').css('padding-left', 0);
+        jQuery('#wpbody').css('padding-left', '20px');
+        jQuery('#ctf-notice-bar').show();
+    }
+
+    jQuery('#ctf-notice-bar .dismiss').click(function(e) {
+        e.preventDefault();
+        jQuery('#ctf-notice-bar').remove();
+        jQuery.ajax({
+            url: ctf.ajax_url,
+            type: 'post',
+            data: {
+                action : 'ctf_lite_dismiss',
+                ctf_nonce: ctf.sb_nonce
+            },
+            success: function (data) {
+            }
+        });
+    });
+
 });

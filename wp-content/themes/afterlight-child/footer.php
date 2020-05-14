@@ -13,7 +13,7 @@
 	</div><!-- .site-content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php dynamic_sidebar( 'footer_widget' ); ?>
+		<!-- COMMENT OUT SIDEBAR <?php dynamic_sidebar(/* 'footer_widget' */); ?> -->
 	</footer><!-- .site-footer -->
 </div><!-- .site -->
 

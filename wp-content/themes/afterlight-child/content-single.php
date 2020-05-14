@@ -24,7 +24,7 @@ $when = get_field('when');
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
+		<?php /*
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'afterlight' ) . '</span>',
 				'after'       => '</div>',
@@ -32,7 +32,8 @@ $when = get_field('when');
 				'link_after'  => '</span>',
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'afterlight' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
+			) ); 
+			*/
 		?>
 	</div><!-- .entry-content -->
 

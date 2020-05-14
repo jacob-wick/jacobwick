@@ -51,15 +51,15 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-	<?php
-		if ( have_posts() ) :
+	<!-- <?php
+		// if ( have_posts() ) :
 			// Previous/next page navigation.
 			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'afterlight' ),
-				'next_text'          => __( 'Next page', 'afterlight' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'afterlight' ) . ' </span>',
+		//		'prev_text'          => __( 'Previous page', 'afterlight' ),
+		//		'next_text'          => __( 'Next page', 'afterlight' ),
+		//		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'afterlight' ) . ' </span>',
 			) );
-		endif;
-	?>
+		// endif;
+	?> 
 
-<?php get_footer(); ?>
+<?php get_footer(); ?> -->

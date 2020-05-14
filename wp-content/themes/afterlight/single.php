@@ -23,7 +23,7 @@ get_header(); ?>
 			endif;
 
 			// Previous/next post navigation.
-			the_post_navigation( array(
+			 the_post_navigation( array(
 				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'afterlight' ) . '</span> ' .
 					'<span class="screen-reader-text">' . __( 'Next post:', 'afterlight' ) . '</span> ' .
 					'<span class="post-title">%title</span>',

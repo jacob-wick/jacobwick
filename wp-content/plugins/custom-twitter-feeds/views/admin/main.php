@@ -1,4 +1,16 @@
 <div id="ctf-admin" class="wrap">
+	<?php
+	$lite_notice_dismissed = get_transient( 'twitter_feed_dismiss_lite' );
+
+	if ( ! $lite_notice_dismissed ) :
+		?>
+        <div id="ctf-notice-bar" style="display:none">
+            <span class="ctf-notice-bar-message"><?php _e( 'You\'re using Custom Twitter Feeds Lite. To unlock more features consider <a href="https://smashballoon.com/custom-twitter-feeds/?utm_source=WordPress&utm_campaign=twitterliteplugin&utm_medium=notice-bar" target="_blank" rel="noopener noreferrer">upgrading to Pro</a>.', 'custom-twitter-feeds'); ?></span>
+            <button type="button" class="dismiss" title="<?php _e( 'Dismiss this message.', 'custom-twitter-feeds'); ?>" data-page="overview">
+            </button>
+        </div>
+	<?php endif; ?>
+
     <h1>Custom Twitter Feeds</h1>
     <?php
     // this controls which view is included based on the selected tab
@@ -33,7 +45,7 @@
     }
     ?>
 
-    <p><span class="fa fa-life-ring" aria-hidden="true"></span>&nbsp; <?php _e('Need help setting up the plugin? Check out our <a href="https://smashballoon.com/custom-twitter-feeds/free/" target="_blank">setup directions</a>', 'custom-twitter-feeds'); ?></p>
+    <p><span class="fa fa-life-ring" aria-hidden="true"></span>&nbsp; <?php _e('Need help setting up the plugin? Check out our <a href="https://smashballoon.com/custom-twitter-feeds/free/?utm_source=plugin-free&utm_campaign=ctf" target="_blank">setup directions</a>', 'custom-twitter-feeds'); ?></p>
 
     <div class="ctf-quick-start">
         <h3><span class="fa fa-rocket" aria-hidden="true"></span>&nbsp; <?php _e( 'Display your feed', 'custom-twitter-feeds'); ?></h3>
@@ -42,7 +54,7 @@
         <p><?php _e( "Find out how to display <a href='?page=custom-twitter-feeds&tab=display'>multiple feeds</a>.", "custom-twitter-feeds" ); ?></p>
     </div>
 
-    <a href="https://smashballoon.com/custom-twitter-feeds/demo" target="_blank" class="ctf-pro-notice">
+    <a href="https://smashballoon.com/custom-twitter-feeds/demo?utm_source=plugin-free&utm_campaign=ctf" target="_blank" class="ctf-pro-notice">
         <img src="<?php echo plugins_url( '../../img/pro-notice.png?1' , __FILE__ ) ?>" alt="Custom Twitter Feeds Pro" />
     </a>
     

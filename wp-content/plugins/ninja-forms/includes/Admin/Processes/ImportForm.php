@@ -68,11 +68,11 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     {
         // If we aren't passed any form content, bail.
         if ( empty ( $_POST[ 'extraData' ][ 'content' ] ) ) {
-            // TODO: When we add error handling to the batch processor, this should be revisited.
+            $this->add_error( 'empty_content', esc_html__( 'No export provided.', 'ninja-forms' ), 'fatal' );
             $this->batch_complete();
         }
-
-        $data = explode( ';base64,', $_POST[ 'extraData' ][ 'content' ] );
+        $extra_content = WPN_Helper::esc_html($_POST[ 'extraData' ][ 'content']);
+        $data = explode( ';base64,', $extra_content );
         $data = base64_decode( $data[ 1 ] );
         
         /**
@@ -84,11 +84,14 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
          * We're first going to try to json_decode. If we don't get an array, we'll unserialize.
          */
 
-        $decoded_data = json_decode( WPN_Helper::json_cleanup( html_entity_decode( $data ) ), true );
-        
+        $decoded_data = json_decode( WPN_Helper::json_cleanup( html_entity_decode( $data, ENT_QUOTES ) ), true );
+
         // If we don't have an array, try unserializing
         if ( ! is_array( $decoded_data ) ) {
             $decoded_data = WPN_Helper::maybe_unserialize( $data );
+            if ( ! is_array( $decoded_data ) ) {
+                $decoded_data = json_decode( $decoded_data, true );
+            }
         }
 
         // Try to utf8 decode our results.
@@ -97,6 +100,11 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
         // If json_encode returns false, then this is an invalid utf8 decode.
         if ( ! json_encode( $data ) ) {
             $data = $decoded_data;
+        }
+
+        if ( ! is_array( $data ) ) {
+            $this->add_error( 'decode_failed', esc_html__( 'Failed to read export. Please try again.', 'ninja-forms' ), 'fatal' );
+            $this->batch_complete();
         }
 
         $data = $this->import_form_backwards_compatibility( $data );
@@ -137,7 +145,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     public function restart()
     {
         // Get our remaining fields from the database.
-        $this->form = get_option( 'nf_import_form', $this->form, array() );
+        $this->form = get_option( 'nf_import_form', array() );
     }
 
     /**
@@ -161,7 +169,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
          *     Save our processing option.
          *     Move on to the next step.
          */
-        if ( ! isset ( $this->form[ 'ID' ] ) ) {
+        if ( ! isset( $this->form[ 'ID' ] ) ) {
             $this->insert_form();
         } else { // We have a form ID set.
             $this->insert_fields();
@@ -231,6 +239,8 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
         $insert_columns = array();
         $insert_columns_types = array();
         foreach ( $this->forms_db_columns as $column_name => $setting_name ) {
+            // Make sure we don't try to set created_at to NULL.
+            if( 'created_at' === $column_name && is_null( $this->form[ 'settings' ][ $setting_name ] ) ) continue;
             $insert_columns[ $column_name ] = $this->form[ 'settings' ][ $setting_name ];
             if ( is_numeric( $this->form[ 'settings' ][ $setting_name ] ) ) {
                 array_push( $insert_columns_types, '%d' );
@@ -243,6 +253,11 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
 
         // Update our form ID with the newly inserted row ID.
         $this->form[ 'ID' ] = $this->_db->insert_id;
+
+        if ( 0 === $this->form[ 'ID' ] ) {
+            $this->add_error( 'insert_failed', esc_html__( 'Failed to insert new form.', 'ninja-forms' ), 'fatal' );
+            $this->batch_complete();
+        }
 
         $this->insert_form_meta();
         $this->insert_actions();
@@ -264,7 +279,16 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     {
         $insert_values = '';
 
+        $blacklist = array(
+            'embed_form',
+            'public_link',
+            'public_link_key',
+            'allow_public_link',
+        );
+        $blacklist = apply_filters( 'ninja_forms_excluded_import_form_settings', $blacklist );
+
         foreach( $this->form[ 'settings' ] as $meta_key => $meta_value ) {
+            if ( in_array( $meta_key, $blacklist ) ) continue;
             $meta_value = maybe_serialize( $meta_value );
             $this->_db->escape_by_ref( $meta_value );
             $insert_values .= "( {$this->form[ 'ID' ]}, '{$meta_key}', '{$meta_value}'";
@@ -382,7 +406,15 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
          */
         for ( $i = 0; $i < $this->fields_per_step; $i++ ) {
             // If we don't have a field, skip this $i.
-            if ( ! isset ( $this->form[ 'fields' ][ $i ] ) ) continue;
+            if ( ! isset ( $this->form[ 'fields' ][ $i ] ) ) {
+                // Remove this field from our fields array.
+                unset( $this->form[ 'fields' ][ $i ] );
+                // If we haven't exceeded the field total...
+                if ( $i < count( $this->form[ 'fields' ] ) ) {
+                    $this->add_error( 'empty_field', esc_html__( 'Some fields might not have been imported properly.', 'ninja-forms' ) );
+                }
+                continue;
+            }
 
             $field_settings = $this->form[ 'fields' ][ $i ];
             // Remove a field ID if we have one set.
@@ -525,7 +557,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
         if( ! $has_save_action ) {
             $import[ 'actions' ][] = array(
                 'type' => 'save',
-                'label' => __( 'Save Form', 'ninja-forms' ),
+                'label' => esc_html__( 'Save Form', 'ninja-forms' ),
                 'active' => TRUE
             );
         }
@@ -794,7 +826,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
             $passwordconfirm = array_merge( $field, array(
                 'id' => '',
                 'type' => 'passwordconfirm',
-                'label' => $field[ 'label' ] . ' ' . __( 'Confirm', 'ninja-forms' ),
+                'label' => $field[ 'label' ] . ' ' . esc_html__( 'Confirm', 'ninja-forms' ),
                 'confirm_field' => 'password_' . $field[ 'id' ]
             ));
             $field[ 'new_fields' ][] = $passwordconfirm;
@@ -818,7 +850,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
                 'creditcardcvc'        => $field[ 'cc_cvc_label' ],
                 'creditcardfullname'   => $field[ 'cc_name_label' ],
                 'creditcardexpiration' => $field[ 'cc_exp_month_label' ] . ' ' . $field[ 'cc_exp_year_label' ],
-                'creditcardzip'        => __( 'Credit Card Zip', 'ninja-forms' ),
+                'creditcardzip'        => esc_html__( 'Credit Card Zip', 'ninja-forms' ),
             );
 
 

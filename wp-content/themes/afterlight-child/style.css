@@ -41,11 +41,16 @@ body {
 	margin-bottom: 1rem;
 }
 
+.site-footer {
+	display: none;
+}
+
 /* Header Styles */
 
 .nav-menu {
 	font-family: 'Comfortaa', 'Lato', sans-serif, monospace;
 	color: #1a1a1a;
+	background: #fff;
 }
 
 .site-header {
@@ -64,12 +69,9 @@ body {
 	border: none;
 }
 
-.sidebar-toggle:hover, .sidebar-toggle:active {
-	background: none;
-}
-
 .site-header-top a, .site-header-top button {
 	color: #1a1a1a;
+	background: #fff;
 }
 
 .site-header .nav-menu a:hover, .sidebar-toggle:hover {
@@ -113,8 +115,8 @@ body {
 .home .content-area {
 }
 
-.home article {
-	background: url('images/web_press_2.jpg') no-repeat fixed top center / cover !important;
+body.home {
+	background: url('images/jacob-41.jpg') no-repeat fixed bottom center / cover;
 	min-height: 70vh;
 }
 
@@ -124,10 +126,6 @@ body {
 
 .home .hentry {
 	margin-right: 0;
-}
-
-.home .site-footer {
-	display: none;
 }
 
 /* CV Styles */
@@ -174,7 +172,7 @@ body {
 	list-style: none;
 }
 
-/* Footer Styles */
+/* Footer Styles 
 
 .ctf-tweets {
 	display: flex;
@@ -196,7 +194,7 @@ body {
 
 .ctf-retweet {
 	display: none;
-}
+} */
 
 /* Media Fixes */
 
